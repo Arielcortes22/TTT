@@ -1,16 +1,22 @@
+const Reiniciar = document.getElementById("Reiniciar");
+
 let isplayerOne = true;
 let Cats = document.getElementsByClassName("Cat");
 
-for (let i = 0; i < Cats.length; i++) {
-Cats[i].addEventListener("click",userMove);
+for (let index = 0; index < Cats.length; index++) {
+Cats[index].addEventListener("click",function () {
+    console.log(Cats[index]);
+    Cats[index].innerHTML = "x"
+    selector()
+    
+});
   
 }
-function userMove(e) {
-    let CatValue = e.target.innerHTML;
-    if (!CatValue.length) {
-        e.target.innerHTML =isplayerOne ? "x" :"o";
-        isplayerOne =!isplayerOne;
-
+function selector() {
+    let Bot = Math.floor((Math.random() * 9));
+    console.log(Bot);
+    Cats[Bot].innerHTML = "o"
+               
         checkline(0, 1, 2);
         checkline(3, 4, 5);
         checkline(6, 7, 8);
@@ -20,7 +26,8 @@ function userMove(e) {
         checkline(0, 4, 8);
         checkline(6, 4, 2);
     }
-}
+
+
 function checkline(c1, c2, c3) {
     if(
         Cats[c1].innerHTML.length &&
@@ -33,5 +40,18 @@ function checkline(c1, c2, c3) {
 }
 
 function showWinner(player) {
-    document.querySelector("#Resultado").innerHTML = player + "win"
+    document.getElementById("Resultado").innerHTML = player + "WIN"
 } 
+
+    Reiniciar.addEventListener("click", function() {
+
+    for (let index = 0; index < Cats.length; index++) {
+        Cats[index].textContent = "";
+        console.log(Reiniciar);
+    }  
+    })
+
+    
+
+   
+   
