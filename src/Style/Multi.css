@@ -1,0 +1,42 @@
+#body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #969696;
+
+    color: antiquewhite;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+ 
+}
+#Game .Cat{
+    height: 90px;
+    width: 90px;
+    font-size: 3rem;
+    display: grid;
+    place-items: center;
+    border: 3px solid rgb(100, 100, 100);
+    background-color: rgb(252, 58, 58);
+    float: left;
+    
+}
+#Game{
+    width: 346px;
+    text-align: center;
+}
+#Resultado{
+    position: relative;
+    top: 10px;
+    height: 1rem;
+
+
+}
+
+
+#Resultado{
+color: rgb(255, 255, 255);
+padding-left: 10%;
+}
+
