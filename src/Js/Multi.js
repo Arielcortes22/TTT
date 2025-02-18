@@ -1,5 +1,9 @@
 const Reiniciar = document.getElementById("Reiniciar");
 const isEmpate = document.getElementById("EMPATE");
+const Game = document.getElementById("Game");
+const Cat = document.getElementById("Cat");
+const Resultado = document.getElementById("Resultado");
+
 
 let isplayerOne = true;
 let Cats = document.getElementsByClassName("Cat");
@@ -125,7 +129,7 @@ function EMPATE() {
 window.onload = function () {
     const winner = localStorage.getItem("winner");
     if (winner && winner !== "") {
-        document.getElementById("Resultado").innerHTML = winner + " WIN";
+        document.getElementById("Resultado").innerHTML = winner + " WINS";
     } else {
         const isEmpate = localStorage.getItem("isEmpate");
         if (isEmpate === "true") {

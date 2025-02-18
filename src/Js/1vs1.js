@@ -1,8 +1,13 @@
+const Reiniciar = document.getElementById("Reiniciar");
+const Game = document.getElementById("Game");
+const Cat = document.getElementById("Cat");
+const Resultado = document.getElementById("Resultado");
+
 let isplayerOne = true;
 let Cats = document.getElementsByClassName("Cat");
 
-for (let i = 0; i < Cats.length; i++) {
-Cats[i].addEventListener("click",userMove);
+for (let index = 0; index < Cats.length; index++) {
+Cats[index].addEventListener("click",userMove);
   
 }
 function userMove(e) {
@@ -33,7 +38,15 @@ function checkline(c1, c2, c3) {
 }
 
 function showWinner(player) {
-    document.querySelector("#Resultado").innerHTML = player + "win"
+    document.getElementById("Resultado").innerHTML = player + "win"
 } 
     
+Reiniciar.addEventListener("click", function () {
+    for (let index = 0; index < Cats.length; index++) {
+        Cats[index].textContent = "";
+    }
+    document.getElementById("Resultado").innerHTML = "";
+    localStorage.removeItem("winner");
+    console.log(Reiniciar);
+});
 
